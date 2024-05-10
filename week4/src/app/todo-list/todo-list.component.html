@@ -1,0 +1,14 @@
+<div class="todo-input">
+<input [(ngModel)]="todoInputValue" type="text">
+<button [disabled]="todoInputValue.length<=2" (click)="addTask()">Добави</button>
+</div>
+<div class="task-list">
+@for (objectTask of taskCollection; track $index) {
+    <app-todo-task 
+    [inputTask]="objectTask.task"
+    [inputStatus]="objectTask.status" 
+    [inputTaskObject]="objectTask"
+    (onStatusChange)="processStatusChange($event)">
+</app-todo-task>
+}
+</div>

@@ -1,0 +1,18 @@
+<!-- @if(inputTaskObject.task=='todo'){
+<div class="todo">{{inputTaskObject.task}}</div>
+}
+@if(inputTaskObject.task=='doing'){
+<div class="doing">{{inputTaskObject.task}}</div>
+}
+@if(inputTaskObject.task=='done'){
+    <div class="done">{{inputTaskObject.task}}</div>
+} -->
+<div [class]="getClassByStatus(inputTaskObject.status)">
+    {{inputTaskObject.task}}
+</div>
+
+<button (click)="processStatus('todo')">TODO</button>
+
+<button (click)="processStatus('todo')">DOING</button>
+
+<button (click)="processStatus('todo')">DONE</button>
